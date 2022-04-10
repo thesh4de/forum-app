@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+<ul>
+	<li><a href="/top">Top</a></li>
+	<li><a href="/new">New</a></li>
+	<!--li><a href="/cats">Categories</a></li>
+	<li><a href="/unread">Unread</a></li -->
+</ul>
+
+<a href="/post">Write a new topic</a>
+
+<table style="width:100%">
+	<tr>
+		<th>Title</th>
+		<th>Category</th>
+		<th>Last Activity</th>
+		<th>Author</th>
+		<th>Replies</th>
+		<th>Views</th>
+	</tr>
+	{% for topic in topics %}
+	<tr>
+		<td><a href="/topic/{{ topic.id }}"><b>{{ topic.title }}</b></a></td>
+		<td><a href="/cat/{{ topic.category }}">{{ topic.category }}</a></td>
+		<td>{{ topic.lastActivity }}</td>
+		<td>{{ topic.author }}</td>
+		<td>{{ topic.repliesNum }}</td>
+		<td>{{ topic.views }}</td>
+	</tr>
+	{% endfor %}
+</table>
+{% endblock %}
