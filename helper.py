@@ -4,7 +4,7 @@ import json
 
 # This file contains all the databases.
 def createDb(app):
-    app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///data.db"
+    app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///database/data.db"
     app.config["SECRET_KEY"] = "hard to guess thing"
     db = SQLAlchemy(app)
 
