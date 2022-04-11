@@ -5,4 +5,3 @@ A simple forum app with file attaching feature.
 ```
 pip install -r requirements.txt
 python app.py
-'''
