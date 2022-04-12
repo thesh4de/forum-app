@@ -1,27 +1,6 @@
-<!-- {% extends "base.html" %} -->
+{% extends "base.html" %}
 
-<!-- {% block content %} -->
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="{{ url_for('static', filename='fonts/icomoon/style.css') }}">
-	
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/owl.carousel.min.css') }}">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
-    
-    <!-- Style -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-
-    <title>Table #9</title>
-  </head>
-  <body>
+{% block content %}
 <ul>
 	<li><a href="/top">Top</a></li>
 	<li><a href="/new">New</a></li>
@@ -30,25 +9,16 @@
 </ul>
 
 <a href="/post">Write a new topic</a>
-<div class="content">
-    
-    <div class="container">
-      <h2 class="mb-5">Table #9</h2>
 
-      <div class="table-responsive">
-
-        <table class="table custom-table">
-          <thead>
-            <tr>
-              <th scope="col">Title</th>
-              <th scope="col">Category</th>
-              <th scope="col">Last Activity</th>
-              <th scope="col">Author</th>
-			  <th scope="col">Replies</th>
-			  <th scope="col">Views</th>
-            </tr>
-          </thead>
-		<tbody>
+<table style="width:100%">
+	<tr>
+		<th>Title</th>
+		<th>Category</th>
+		<th>Last Activity</th>
+		<th>Author</th>
+		<th>Replies</th>
+		<th>Views</th>
+	</tr>
 	{% for topic in topics %}
 	<tr>
 		<td><a href="/topic/{{ topic.id }}"><b>{{ topic.title }}</b></a></td>
@@ -59,11 +29,5 @@
 		<td>{{ topic.views }}</td>
 	</tr>
 	{% endfor %}
-	</tbody>
 </table>
-</div>
-</div>
-</div>
-</body>
-</html>
-<!-- {% endblock %} -->
+{% endblock %}
