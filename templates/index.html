@@ -1,6 +1,18 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forum</title>
+</head>
+<body>
+<div id="toprow">
+	<a href="/"><h1>SITENAME</h1></a>
+	<a href="/login">Login/Logout</a>
+</div>
 
-{% block content %}
+
 <ul>
 	<li><a href="/top">Top</a></li>
 	<li><a href="/new">New</a></li>
@@ -8,7 +20,7 @@
 	<li><a href="/unread">Unread</a></li -->
 </ul>
 
-<a href="/post">Write a new topic</a>
+<a href="/post">Write a new TOPIC</a>
 
 <table style="width:100%">
 	<tr>
@@ -30,4 +42,6 @@
 	</tr>
 	{% endfor %}
 </table>
-{% endblock %}
+
+</body>
+</html>
