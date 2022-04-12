@@ -1980,6 +1980,4 @@
 .venv/Scripts/pip3.exe
 .venv/Scripts/python.exe
 .venv/Scripts/pythonw.exe
-__pycache__/helper.cpython-310.pyc
-__pycache__/login.cpython-310.pyc
 database/data.db

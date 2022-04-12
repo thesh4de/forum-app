@@ -1,0 +1,44 @@
+.navbar-brand {
+    color: #fff;
+}
+
+#content-panel {
+    margin-top: 20px;
+}
+
+.table {
+    margin-top: 20px;
+}
+
+#login-panel {
+    position: relative;
+    margin-top: 30px;
+    left: 20%;
+}
+
+#post-panel {
+    margin-top: 20px;
+
+}
+
+#topic-panel {
+    margin-top: 20px;
+}
+
+#name {
+    margin-top: 20px;
+    margin-left: 30px;
+}
+
+#left-panel {
+    border: solid 1px #000;
+}
+
+#time {
+    padding-bottom: 10px;
+    border-bottom: solid 1px #000;
+}
+
+#likes-panel {
+    margin: 10px;
+}
