@@ -35,12 +35,16 @@
 
   <div class="container" id="content-panel">
     <a href="/post"><button type="button" class="btn btn-primary">Create a Topic</button></a>
-    Filter:
-    <a href="/"><button type="button" class="btn btn-primary">All</button></a>
-    <a href="/cat/Event"><button type="button" class="btn btn-primary">Event</button></a>
-    <a href="/cat/Competition"><button type="button" class="btn btn-primary">Competition</button></a>
-    <a href="/cat/DE-verse_City"><button type="button" class="btn btn-primary">DE-verse_City</button></a>
-    <a href="/cat/Commerce"><button type="button" class="btn btn-primary">Commerce</button></a>
+    <div class="dropdown">
+      <button class="dropbtn">Filter</button>
+      <div class="dropdown-content">
+        <a href="/">All</a>
+        <a href="/cat/Event">Event</a>
+        <a href="/cat/Competition">Competition</a>
+        <a href="/cat/DE-verse_City">DE-verse_City</a>
+        <a href="/cat/Commerce">Commerce</a>
+      </div>
+    </div> 
     <br>
     <table class="table">
       <thead class="thead-dark">

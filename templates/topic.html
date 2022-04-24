@@ -70,19 +70,21 @@
 				</div>
 			</div>
 		</div>
-		<div class="form-group" id="reply">
-			<form action="/reply/{{ topic.id }}" method="post" enctype="multipart/form-data">
-				<textarea name="body" cols="100" rows="10" class="form-control" id="inputAddress2"
-				placeholder=""></textarea>
-				<div class="btn btn-primary">
-					<label for="inputCity">File:</label>
-					<input type="file" name="file">
-				</div>
-				<button type="submit" class="btn btn-primary">Reply</button>
-			</form>
-		</div>
 	</div>
 	{% endfor %}
+	<div class="container" id="topic-panel">
+	<div class="form-group" id="reply">
+		<form action="/reply/{{ topic.id }}" method="post" enctype="multipart/form-data">
+			<textarea name="body" cols="100" rows="10" class="form-control" id="inputAddress2"
+			placeholder=""></textarea>
+			<div class="btn btn-primary">
+				<label for="inputCity">File:</label>
+				<input type="file" name="file">
+			</div>
+			<button type="submit" class="btn btn-primary">Reply</button>
+		</form>
+	</div>
+	</div>
 	
 </body>
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
