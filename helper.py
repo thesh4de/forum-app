@@ -62,6 +62,8 @@ def createDb(app):
     class Reply(db.Model):
         id = db.Column(db.Integer, primary_key=True)
         content = db.Column(db.Text)
+        filname = db.Column(db.Text)
+        fil = db.Column(db.LargeBinary)
         date = db.Column(db.Text)
         author = db.Column(db.Text)
         inReplyTo = db.Column(db.Integer)
@@ -70,9 +72,11 @@ def createDb(app):
         # Adding the numbers
         likesNum = db.Column(db.Integer)
 
-        def __init__(self, content, date, author, inReplyTo):
+        def __init__(self, content, date, author, inReplyTo, filname, fil):
             self.content = content
             self.date = date
+            self.filname = filname
+            self.fil = fil
             self.author = author
             self.inReplyTo = inReplyTo
             self.likesNum = 0

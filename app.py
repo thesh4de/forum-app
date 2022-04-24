@@ -73,10 +73,15 @@ def renderTopic(id):
         "topic.html", topic=topic, replies=Reply.query.filter_by(inReplyTo=id)
     )  # Render the page
 
-@app.route("/download/<id>")
-def download(id):
+@app.route("/download-topic/<id>")
+def download_topic(id):
     topic = Topic.query.filter_by(id=id).first_or_404()
     return send_file(BytesIO(topic.fil), as_attachment=True, attachment_filename=topic.filname)
+
+@app.route("/download-reply/<id>")
+def download_reply(id):
+    reply = Reply.query.filter_by(id=id).first_or_404()
+    return send_file(BytesIO(reply.fil), as_attachment=True, attachment_filename=reply.filname)
 
 @app.route("/reply/<id>", methods=["POST"])  # Reply to a post.
 @login_required
@@ -84,7 +89,8 @@ def replyTo(id):
     topic = Topic.query.filter_by(id=id).first_or_404()
     topic.reply(getTime())  # Reply to the topic
     reply = Reply(
-        request.form["body"], getTime(), current_user.username, id
+        request.form["body"], getTime(), current_user.username, id, request.files.get('file').filename,
+        request.files.get('file').read()
     )  # Add the reply
     db.session.add(reply)
     db.session.add(topic)
